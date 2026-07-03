@@ -119,3 +119,82 @@ To modify all of the parameters the gait, run:
 ```bash
 python serpentine.py <amplitude> <angular_frequency> <phase_shift> <orientation> <gait_duration> <dynamixel_profile_velocity> <dynamixel_profile_acceleration> <bias>
 ```
+
+### Sidewinding
+
+#### Default parameters
+
+To run ADDER using the default parameters, run:
+
+```bash
+python sidewinding.py
+```
+
+#### Modify duration
+
+To change the duration of the gait (default is 100), run:
+
+```bash
+python sidewinding.py <gait_duration>
+```
+
+#### Modify **ALL** parameters
+
+To modify all of the parameters the gait, run:
+
+```bash
+python sidewinding.py <amplitude_tangent> <angular_frequency_tangent> <phase_shift_tangent> <amplitude_normal> <angular_frequency_normal> <phase_shift_normal> <gait_duration> <dynamixel_profile_velocity> <dynamixel_profile_acceleration>
+```
+
+### Rectilinear
+
+#### Default parameters
+
+To run ADDER using the default parameters, run:
+
+```bash
+python rectilinear.py
+```
+
+#### Modify duration
+
+To change the duration of the gait (default is 100), run:
+
+```bash
+python rectilinear.py <gait_duration>
+```
+
+#### Modify **ALL** parameters
+
+To modify all of the parameters the gait, run:
+
+```bash
+python rectilinear.py <dynamixel_profile_velocity> <dynamixel_profile_acceleration> <amplitude> <angular_frequency> <gait_duration> <phase_shift>
+```
+
+### Concertina
+
+#### Default parameters
+
+To run ADDER using the default parameters, run:
+
+```bash
+python concertina.py
+```
+
+#### Modify duration
+
+To change the duration of the gait (default is 10), run:
+
+```bash
+python concertina.py <gait_duration>
+```
+
+#### Modify **ALL** parameters
+
+To modify all of the parameters the gait, run:
+
+```bash
+python concertina.py <dynamixel_profile_velocity> <dynamixel_profile_acceleration> <gait_duration> <number_of_transitions>
+```
+
