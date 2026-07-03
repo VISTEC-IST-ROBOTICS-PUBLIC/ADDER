@@ -38,6 +38,38 @@ The host computer must be able to:
 - Be on the same network as the robot.
 - Run the required Python scripts and dependencies.
 
+## Network Configuration
+
+The Raspberry Pi and the host computer must be connected to the same local network to enable SSH communication.
+
+To configure the Raspberry Pi's Wi-Fi connection:
+
+1. Flash the official TurtleBot3 image to the microSD card.
+2. Mount the microSD card on your computer.
+3. Open the Netplan configuration file located in `/etc/netplan/`.
+4. Edit the `wifis` section to specify your wireless network credentials.
+
+```bash
+network:
+  version: 2
+  renderer: NetworkManager
+  wifis:
+    wlan0:
+      dhcp4: true
+      access-points:
+        "YOUR_WIFI_SSID":
+          password: "YOUR_WIFI_PASSWORD"
+```
+
+5. Save the file and safely eject the microSD card.
+6. Insert the microSD card into the Raspberry Pi and power on the robot.
+7. Connect your host computer to the same Wi-Fi network.
+8. Determine the Raspberry Pi's IP address and connect via SSH:
+
+```bash
+ssh ubuntu@<raspberry_pi_ip_address>
+```
+
 ## Installation
 
 Clone the repository:
@@ -62,8 +94,28 @@ pip install smbus2
 
 ## Usage
 
-Run the controller:
+### Serpentine
+
+#### Default parameters
+
+To run ADDER using the default parameters, run:
 
 ```bash
-python main.py
+python serpentine.py
+```
+
+#### Modify duration
+
+To change the duration of the gait (default is 100), run:
+
+```bash
+python serpentine.py <gait_duration>
+```
+
+#### Modify **ALL** parameters
+
+To modify all of the parameters the gait, run:
+
+```bash
+python serpentine.py <amplitude> <angular_frequency> <phase_shift> <orientation> <gait_duration> <dynamixel_profile_velocity> <dynamixel_profile_acceleration> <bias>
 ```
