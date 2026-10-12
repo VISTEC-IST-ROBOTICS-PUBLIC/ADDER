@@ -61,7 +61,7 @@ class SnakeController(DynamixelController):
         None
         """
         #Width of the double-spiral.
-        self.__w = 33
+        self.__w = 66
         #Radius of the double-spiral.
         self.__r = 7.5
 
@@ -203,8 +203,8 @@ class SnakeController(DynamixelController):
             position = -joint[1] + self.max_translation + i_tb
 
             #Convert to motor command for left and right into degrees, and add offset.
-            motor_l = math.degrees(((self.w*angle + position)/self.r))      
-            motor_r = math.degrees(((self.w*angle - position)/self.r)) 
+            motor_l = math.degrees(((self.w*angle + 2*position)/(2 * self.r)))      
+            motor_r = math.degrees(((self.w*angle - 2*position)/(2 * self.r))) 
 
             #Command ratio such that maximum_dynamixel_command/complete_circle_angle.
             commandRatio = 4095/360            
