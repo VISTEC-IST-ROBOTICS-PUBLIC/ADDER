@@ -459,7 +459,7 @@ class SnakeController(DynamixelController):
             #Send command to the motors
             self.joint_command(command)
     
-    def concertina(self, extend = 20, compress = 10, max_angle = 60, number_of_transitions = 16, number_of_commands = 10):
+    def concertina(self, extend = 20, compress = 10, max_angle = 60, number_of_transitions = 1, number_of_commands = 10):
         """
         Concertina gait derived from a sequence of commands. All yaw joints rotates while the pitch joints translates.
 
