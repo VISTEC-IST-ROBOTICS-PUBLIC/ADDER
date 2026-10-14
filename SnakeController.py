@@ -61,7 +61,7 @@ class SnakeController(DynamixelController):
         None
         """
         #Width of the double-spiral.
-        self.__w = 66
+        self__w_m = 66
         #Radius of the double-spiral.
         self.__r = 7.5
 
@@ -108,7 +108,7 @@ class SnakeController(DynamixelController):
         ----------
         Double-spiral width : float
         """
-        return self.__w
+        return self__w_m
     
     @property
     def r(self):
